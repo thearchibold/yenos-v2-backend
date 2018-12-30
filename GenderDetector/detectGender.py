@@ -3,10 +3,10 @@ import numpy as np
 from keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
 from nltk.tag import pos_tag
-
+import nltk
 global gender_model, graph
 
-
+nltk.download('averaged_perceptron_tagger')
 
 # from nltk.tokenize import SExprTokenizer
 # from keras.preprocessing.text import Tokenizer
