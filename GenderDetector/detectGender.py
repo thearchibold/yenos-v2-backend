@@ -1,0 +1,55 @@
+import pickle
+import numpy as np
+from keras.preprocessing.sequence import pad_sequences
+import tensorflow as tf
+from nltk.tag import pos_tag
+import nltk
+global gender_model, graph
+nltk.download()
+
+
+# from nltk.tokenize import SExprTokenizer
+# from keras.preprocessing.text import Tokenizer
+# from keras.models import Sequential
+# from keras.layers import LSTM
+# from keras.layers import Dense, Dropout, RepeatVector
+# from keras.layers import Embedding
+# from keras.utils import to_categorical
+# from sklearn.preprocessing import LabelEncoder
+
+graph = tf.get_default_graph()
+longest_name_length = 15
+
+try:
+    token_model = pickle.load(open('static/name_tokenizer.tkn', 'rb+'))
+    gender_model = pickle.load(open('static/gender.model', 'rb+'))
+
+except Exception as e:
+    print(e)
+    pass
+
+
+def predict_gender(name):
+
+    name, tag = pos_tag([str(name)])[0]
+
+    if tag == 'NNP' or  tag == 'NN':
+        name_token = [[x for x in name]]
+        name_vect = token_model.texts_to_sequences(name_token)
+        name_padded = pad_sequences(name_vect, maxlen=longest_name_length, padding='post', value=0)
+
+        with graph.as_default():
+            gender = gender_model.predict(name_padded)
+
+        int_conv = [int(x) for x in np.round(gender[0])]
+        gender = ''
+        if int_conv[0] == 1:
+            gender = 'Male'
+            pass
+        if int_conv[0] == 0:
+            gender = 'Female'
+            pass
+
+        return gender
+    else:
+        return 'Unknown'
