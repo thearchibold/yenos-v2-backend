@@ -3,9 +3,9 @@ import numpy as np
 from keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
 from nltk.tag import pos_tag
-import nltk
+
 global gender_model, graph
-nltk.download()
+
 
 
 # from nltk.tokenize import SExprTokenizer
