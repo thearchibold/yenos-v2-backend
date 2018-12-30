@@ -14,7 +14,6 @@ numpy = "*"
 keras = "*"
 tensorflow = "*"
 nltk= "*"
-re = "*"
 
 [requires]
 
