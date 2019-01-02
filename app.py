@@ -1,19 +1,19 @@
 import re
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 from GenderDetector import detectGender
 
 app = Flask(__name__)
 
 
-def special_match(strg, search=re.compile(r"[^a-zA-Z]").search):
+def special_match(strg, search=re.compile(r"[^a-zA-Z\'\"]").search):
     return bool(search(strg))
 
 
 @app.route('/')
 def hello_world():
-    return 'Welcome to the Gender Generator API. This system predicts a persons gender based on christian or first name. Made with love by Archibold Bernard!'
+    return render_template('landing.html')
 
 @app.route('/api_v1/gender/get_gender', methods=['GET'])
 def getGender():
@@ -29,4 +29,4 @@ def getGender():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

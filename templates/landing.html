@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="/static/css/landing-page/landing.css"/>
+    <link rel="stylesheet" href="/static/css/landing-page/landing_small.css" media="screen and (max-width: 480px)">
+    <title> - Yenos - </title>
+
+</head>
+<body>
+{# hide this banner on large screens#}
+<div class="small-header">
+    <h1>- Yenos -</h1>
+</div>
+<div class="container">
+    <div class="container__item landing-page-container ">
+
+        <div class="content-wrapper">
+
+
+            <div class="ellipse-container">
+
+                <h2 class="greeting">-yenos-</h2>
+
+                <div class="ellipse ellipse__outer--thin">
+
+                    <div class="ellipse ellipse__orbit"></div>
+
+                </div>
+
+                <div class="ellipse ellipse__outer--thick"></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="about">
+    <div class="left">
+
+        <p>Yenos is an Artificial Intelligent system that tries to predict the gender of a given
+            person by his or her first name</p>
+    </div>
+</div>
+{# test it out#}
+
+{#small how to use the system#}
+
+
+<div class="test-containter">
+    <h3>Try Yenos out now!!!</h3>
+    <div class="text-input-container">
+        <input type="text" id="name-field" class="name-field" placeholder="Type a name(e.g Archibold)"
+               onkeyup="textChanged()"/>
+        <button id="btn-gender" disabled onclick="makeRequest()">Gender</button>
+    </div>
+    <p id="gender-result" class="gender-result">Result shows here!!!</p>
+</div>
+
+{#help by sending us your name#}
+<div class="help-container">
+    <h3>How to use Yenos in your app</h3>
+    <h4>As simple as making a <b>GET</b> request as shown below</h4>
+    <p><b>GET</b> https:thearchibold.herokuapp.com/api_v1/gender/get_gender?name=firstname</p>
+
+    <h2>Developer</h2>
+
+    <div class="dev-container">
+        <div class="img-container"></div>
+        <h4>Baidoo Archibold Bernard</h4>
+    </div>
+    <h3>Contributors</h3>
+    <div class="contrib-container">
+        <li>Amponsem Kwabena Boateng</li>
+        <li>Amponsem Kwabena Boateng</li>
+        <li>Amponsem Kwabena Boateng</li>
+    </div>
+</div>
+<div class="small-use">
+    <h3>How to use Yenos in your app</h3>
+    <p><b>GET</b> https:thearchibold.herokuapp.com/api_v1/gender/get_gender?name=firstname</p>
+
+</div>
+
+<script type="text/javascript">
+    let btn_gender = document.getElementById("btn-gender");
+    let gender_result = document.getElementById("gender-result");
+
+
+    function textChanged() {
+        btn_gender.disabled = document.getElementById("name-field").value === "";
+    }
+
+    function makeRequest() {
+        gender_result.innerText = "Please wait...";
+        let name = document.getElementById("name-field").value;
+        fetch(`/api_v1/gender/get_gender?name=${name}`,
+            {method: 'GET'}).then(response => {
+            response.text().then(value => {
+                if (value === "Male" || value === "Female") {
+                    gender_result.innerHTML = `${name} is likely to be a ${value.toLowerCase()}`
+                } else {
+                    gender_result.innerHTML = value
+                }
+            })
+        })
+    }
+
+</script>
+</body>
+
+<footer>
+    <p>theArchibold llc - All Rights Reserved</p>
+</footer>
+</html>
