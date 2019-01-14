@@ -8,15 +8,6 @@ global gender_model, graph
 
 nltk.download('averaged_perceptron_tagger')
 
-# from nltk.tokenize import SExprTokenizer
-# from keras.preprocessing.text import Tokenizer
-# from keras.models import Sequential
-# from keras.layers import LSTM
-# from keras.layers import Dense, Dropout, RepeatVector
-# from keras.layers import Embedding
-# from keras.utils import to_categorical
-# from sklearn.preprocessing import LabelEncoder
-
 graph = tf.get_default_graph()
 longest_name_length = 15
 

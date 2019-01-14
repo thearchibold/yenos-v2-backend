@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94887d86-39ad-46d4-b092-8d7d67bb398e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/landing-page/landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/landing-page/landing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/landing-page/landing_small.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/landing-page/landing_small.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenderDetector/detectGender.py" beforeDir="false" afterPath="$PROJECT_DIR$/GenderDetector/detectGender.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,17 +13,19 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/gender_generator$gender_generator.coverage" NAME="gender_generator Coverage Results" MODIFIED="1546423842518" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gender_generator$kata.coverage" NAME="kata Coverage Results" MODIFIED="1547396245742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/vscode/other" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-155393241">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -32,7 +33,7 @@
           <entry key="Pipfile" value="11" />
           <entry key="css" value="3754" />
           <entry key="html" value="3230" />
-          <entry key="py" value="331" />
+          <entry key="py" value="521" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -41,7 +42,7 @@
           <entry key="CSS" value="3754" />
           <entry key="HTML" value="3230" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="331" />
+          <entry key="Python" value="521" />
           <entry key="TOML file" value="11" />
         </counts>
       </usages-collector>
@@ -51,7 +52,7 @@
           <entry key="Procfile" value="1" />
           <entry key="css" value="5" />
           <entry key="html" value="1" />
-          <entry key="py" value="8" />
+          <entry key="py" value="9" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
@@ -60,63 +61,24 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="8" />
+          <entry key="Python" value="9" />
           <entry key="TOML file" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5223214">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/static/css/landing-page/landing.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/landing.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/static/css/landing-page/landing_small.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="17" column="37" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                    <marker date="1546348268883" expanded="true" signature="262:307" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/vscode/other/kata.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -140,12 +102,13 @@
       <list>
         <option value="$PROJECT_DIR$/Pipfile" />
         <option value="$PROJECT_DIR$/nltk.txt" />
-        <option value="$PROJECT_DIR$/GenderDetector/detectGender.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/static/css/landing.css" />
         <option value="$PROJECT_DIR$/templates/landing.html" />
         <option value="$PROJECT_DIR$/static/css/landing-page/landing_small.css" />
         <option value="$PROJECT_DIR$/static/css/landing-page/landing.css" />
+        <option value="$PROJECT_DIR$/GenderDetector/detectGender.py" />
+        <option value="$USER_HOME$/Desktop/vscode/other/kata.py" />
       </list>
     </option>
   </component>
@@ -236,6 +199,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/vscode/other/kata.py" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -262,7 +226,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.kata">
+    <configuration name="kata" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="gender_generator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/vscode/other" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/vscode/other/kata.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="gender_generator" type="Python.FlaskServer" factoryName="Flask server">
       <module name="gender_generator" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -278,6 +264,15 @@
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Flask server.gender_generator" />
+      <item itemvalue="Python.kata" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.kata" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -296,12 +291,12 @@
     <frame x="0" y="27" width="1366" height="708" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15022762" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15250379" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41391304" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41391304" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.15478261" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -310,7 +305,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3947826" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3275563" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -348,17 +343,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GenderDetector/detectGender.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.6/socketserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
           <caret line="466" selection-start-line="466" selection-end-line="466" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/landing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/landing-page/landing_small.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -373,24 +375,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/landing.html">
+    <entry file="file://$PROJECT_DIR$/GenderDetector/detectGender.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/landing-page/landing_small.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        <state relative-caret-position="60">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/landing-page/landing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="15">
           <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/vscode/other/kata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
