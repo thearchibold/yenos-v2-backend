@@ -35,17 +35,20 @@ def predict_gender(name):
 
         int_conv = [int(x) for x in np.round(gender_pred[0])]
         gender = ''
+        confidence = 0
         if int_conv[0] == 1:
             gender = 'Male'
+            confidence = gender_pred[0][0]
             pass
         if int_conv[0] == 0:
             gender = 'Female'
+            confidence = gender_pred[0][1]
             pass
 
         return {
             "gender":gender,
             "name":name,
-            "confidence":gender_pred[0][0]
+            "confidence":
         }
     else:
         return 'Unknown'
