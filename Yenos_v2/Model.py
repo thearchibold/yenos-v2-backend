@@ -13,7 +13,7 @@ class Model:
         self.VOCAB_SIZE = 53
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        self.pretrained_model =  keras.models.load_model('gender_model.h5')
+        self.pretrained_model =  keras.models.load_model('/static/gender_model.h5')
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         pass
@@ -21,11 +21,11 @@ class Model:
 
     def load_existing_models(self):
         try:
-            with open('static/v2-models/char_to_number.enc', 'rb') as encoder:
+            with open('/static/char_to_number.enc', 'rb') as encoder:
                 char_encoder = pickle.load(encoder)
                 pass
 
-            pretrained_model =  keras.models.load_model('static/v2-models/gender_model.h5')
+            pretrained_model =  keras.models.load_model('/static/gender_model.h5')
 
             return pretrained_model, char_encoder            
             
