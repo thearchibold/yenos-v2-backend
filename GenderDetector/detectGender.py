@@ -30,9 +30,9 @@ def predict_gender(name):
         name_padded = pad_sequences(name_vect, maxlen=longest_name_length, padding='post', value=0)
 
         with graph.as_default():
-            gender = gender_model.predict(name_padded)
+            gender_pred = gender_model.predict(name_padded)
 
-        int_conv = [int(x) for x in np.round(gender[0])]
+        int_conv = [int(x) for x in np.round(gender_pred[0])]
         gender = ''
         if int_conv[0] == 1:
             gender = 'Male'
@@ -41,6 +41,10 @@ def predict_gender(name):
             gender = 'Female'
             pass
 
-        return gender
+        return {
+            "gender":gender,
+            "name":name,
+            "confidence":gender_pred[0]
+        }
     else:
         return 'Unknown'

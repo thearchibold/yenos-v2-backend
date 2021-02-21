@@ -1,8 +1,9 @@
 import re
 
 from flask import Flask, request, render_template
-
 from GenderDetector import detectGender
+from flask import jsonify
+
 
 app = Flask(__name__)
 
@@ -19,13 +20,19 @@ def hello_world():
 def getGender():
     name_data = request.args.get("name")
     if len(name_data) <= 0:
-        return "Name cannot be empty"
+        return jsonify({
+            "error":True,
+            "message":"Name cannot be empty"
+        })
     if special_match(str(name_data)):
-        return "Invalid Parameter"
-
+         return jsonify({
+            "error":True,
+            "message":"Invalid Parameter"
+        })
+    
     else:
        gender = detectGender.predict_gender(name=str(name_data))
-       return str(gender)
+       return jsonify(gender)
 
 
 if __name__ == '__main__':
