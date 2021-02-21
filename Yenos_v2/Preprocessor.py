@@ -1,4 +1,4 @@
-from Model import Model
+from Yenos_v2 import Model
 from tensorflow import keras
 import nltk
 
@@ -6,7 +6,7 @@ import nltk
 
 class Preprocessor:
     def __init__(self):
-        model = Model()
+        model = Model.Model()
         self._, self.encoder = model.load_existing_models()
         self.VOCAB_SIZE = 53
         self.MAX_LEN = 20

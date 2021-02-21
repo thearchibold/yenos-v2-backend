@@ -13,7 +13,6 @@ CORS(app)
 model = Model.Model()
 preprocessor = Preprocessor.Preprocessor()
 
-
 def special_match(strg, search=re.compile(r"[^a-zA-Z\'\"]").search):
     return bool(search(strg))
 
