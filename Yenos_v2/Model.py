@@ -13,7 +13,7 @@ class Model:
         self.VOCAB_SIZE = 53
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        self.pretrained_model =  keras.models.load_model('/static/gender_model.h5')
+        self.pretrained_model =  keras.models.load_model('static/gender_model.h5')
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         pass
