@@ -73,6 +73,7 @@ def predict_gender():
         pass
     return jsonify({
         "error":False,
+        "name":name_data,
         "predictions": predictions
     })
 

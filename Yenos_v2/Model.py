@@ -10,10 +10,11 @@ import pickle
 class Model:
     def __init__(self):
 
-        self.VOCAB_SIZE = 53
+        self.VOCAB_SIZE = 54
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        self.pretrained_model =  keras.models.load_model('static/gender_model.h5')
+        self.pretrained_model = self.get_model()
+        self.pretrained_model.load_weights("static/weight")
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         pass
@@ -25,9 +26,8 @@ class Model:
                 char_encoder = pickle.load(encoder)
                 pass
 
-            pretrained_model =  keras.models.load_model('static/gender_model.h5')
 
-            return pretrained_model, char_encoder            
+            return self.pretrained_model, char_encoder            
             
 
         except Exception as e:
