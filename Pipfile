@@ -12,7 +12,7 @@ flask-heroku = "*"
 sklearn = "*"
 numpy = "*"
 keras = "*"
-tensorflow = "2.4.0"
+tensorflow = "2.4.1"
 nltk= "*"
 flask-cors="3.0.10"
 
