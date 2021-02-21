@@ -4,7 +4,7 @@ from tensorflow import keras
 import tensorflow as tf
 import pickle
 
-tf.config.run_functions_eagerly(True)
+# tf.config.run_functions_eagerly(True)
 
 
 class Model:
