@@ -9,7 +9,6 @@ verify_ssl = true
 flask = "*"
 gunicorn = "*"
 flask-heroku = "*"
-sklearn = "*"
 numpy = "*"
 tensorflow = "==2.4.1"
 nltk= "*"
