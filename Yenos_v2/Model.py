@@ -1,4 +1,4 @@
-import pandas as pd
+# import pandas as pd
 import numpy as np
 from tensorflow import keras
 import tensorflow as tf
@@ -41,9 +41,10 @@ class Model:
             return None
         
         pred = self.pretrained_model.predict(name_tokens)[0]
+        print(pred[0])
         confidence_score = {
-            "FEMALE":pred[0],
-            "MALE":pred[1]
+            "FEMALE": "{:.2f}%".format(pred[0] * 100),
+            "MALE":"{:.2f}%".format(pred[1] * 100)
         }
         round_number = np.round(pred)
         if round_number[0] == 1:
@@ -53,8 +54,8 @@ class Model:
             gender = "MALE"
             pass
         return {
-            gender:gender,
-            confidence_score:confidence_score
+            "gender":gender,
+            "confidence":confidence_score
         }
         
 

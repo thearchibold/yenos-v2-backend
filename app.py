@@ -61,9 +61,8 @@ def predict_gender():
         return jsonify(
             {
             "error":True,
-            "message":f"Error processing {name_data}"
+            "message":"Error processing " + name_data
         })
-        pass
     predictions = model.predict(process_data)
 
     if predictions is None:
