@@ -21,11 +21,11 @@ class Model:
 
     def load_existing_models(self):
         try:
-            with open('/static/char_to_number.enc', 'rb') as encoder:
+            with open('static/char_to_number.enc', 'rb+') as encoder:
                 char_encoder = pickle.load(encoder)
                 pass
 
-            pretrained_model =  keras.models.load_model('/static/gender_model.h5')
+            pretrained_model =  keras.models.load_model('static/gender_model.h5')
 
             return pretrained_model, char_encoder            
             
