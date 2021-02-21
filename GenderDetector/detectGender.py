@@ -31,18 +31,16 @@ def predict_gender(name):
 
         with graph.as_default():
             gender_pred = gender_model.predict(name_padded)
-            print(gender_pred[0][0])
+            print(gender_pred[0])
 
         int_conv = [int(x) for x in np.round(gender_pred[0])]
         gender = ''
-        confidence = 0
+        confidence = gender_pred[0][0]
         if int_conv[0] == 1:
             gender = 'Male'
-            confidence = gender_pred[0][0]
             pass
         if int_conv[0] == 0:
             gender = 'Female'
-            confidence = gender_pred[0][1]
             pass
 
         return {
