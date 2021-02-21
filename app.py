@@ -19,7 +19,6 @@ def hello_world():
     return render_template('landing.html')
 
 @app.route('/api_v1/gender/get_gender', methods=['GET'])
-@cross_origin()
 def getGender():
     name_data = request.args.get("name")
     if len(name_data) <= 0:
