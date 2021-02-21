@@ -48,7 +48,7 @@ def predict_gender(name):
         return {
             "gender":gender,
             "name":name,
-            "confidence":confidence
+            "confidence":str(confidence)
         }
     else:
         return 'Unknown'
