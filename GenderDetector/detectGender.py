@@ -41,6 +41,7 @@ def predict_gender(name):
             pass
         if int_conv[0] == 0:
             gender = 'Female'
+            confidence = 1 - confidence
             pass
 
         return {
