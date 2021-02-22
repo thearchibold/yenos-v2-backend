@@ -2,10 +2,11 @@ import pickle
 import numpy as np
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
+
+tf.config.run_functions_eagerly(True)
+
 global gender_model, graph
 
-
-graph = tf.get_default_graph()
 longest_name_length = 15
 
 try:
