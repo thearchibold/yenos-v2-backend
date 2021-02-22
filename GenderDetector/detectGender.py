@@ -4,7 +4,6 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
 global gender_model, graph
 
-nltk.download('averaged_perceptron_tagger')
 
 graph = tf.get_default_graph()
 longest_name_length = 15
