@@ -2,8 +2,6 @@ import pickle
 import numpy as np
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import tensorflow as tf
-from nltk.tag import pos_tag
-import nltk
 global gender_model, graph
 
 nltk.download('averaged_perceptron_tagger')
@@ -22,32 +20,28 @@ except Exception as e:
 
 def predict_gender(name):
 
-    name, tag = pos_tag([str(name)])[0]
+    name_token = [[x for x in name]]
+    name_vect = token_model.texts_to_sequences(name_token)
+    name_padded = pad_sequences(name_vect, maxlen=longest_name_length, padding='post', value=0)
 
-    if tag == 'NNP' or  tag == 'NN':
-        name_token = [[x for x in name]]
-        name_vect = token_model.texts_to_sequences(name_token)
-        name_padded = pad_sequences(name_vect, maxlen=longest_name_length, padding='post', value=0)
+    with graph.as_default():
+        gender_pred = gender_model.predict(name_padded)
+        print(gender_pred[0])
 
-        with graph.as_default():
-            gender_pred = gender_model.predict(name_padded)
-            print(gender_pred[0])
+    int_conv = [int(x) for x in np.round(gender_pred[0])]
+    gender = ''
+    confidence = gender_pred[0][0]
+    if int_conv[0] == 1:
+        gender = 'Male'
+        pass
+    if int_conv[0] == 0:
+        gender = 'Female'
+        confidence = 1 - confidence
+        pass
 
-        int_conv = [int(x) for x in np.round(gender_pred[0])]
-        gender = ''
-        confidence = gender_pred[0][0]
-        if int_conv[0] == 1:
-            gender = 'Male'
-            pass
-        if int_conv[0] == 0:
-            gender = 'Female'
-            confidence = 1 - confidence
-            pass
-
-        return {
-            "gender":gender,
-            "name":name,
-            "confidence":str(confidence)
-        }
-    else:
-        return 'Unknown'
+    return {
+        "gender":gender,
+        "name":name,
+        "confidence":str(confidence)
+    }
+   
