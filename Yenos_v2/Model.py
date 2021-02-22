@@ -14,7 +14,7 @@ class Model:
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
         self.pretrained_model = self.get_model()
-        self.pretrained_model.load_weights("static/weight")
+        self.pretrained_model.load_weights("static/weight_v2")
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         pass
