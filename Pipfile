@@ -10,7 +10,7 @@ flask = "*"
 gunicorn = "*"
 flask-heroku = "*"
 numpy = "*"
-tensorflow = "==2.2.0"
+tensorflow = "==1.15"
 flask-cors="3.0.10"
 
 [requires]
