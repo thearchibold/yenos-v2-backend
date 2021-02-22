@@ -70,7 +70,6 @@ def predict_gender():
             "error":True,
             "message":"Model failed to resolve name"
         })
-        pass
     return jsonify({
         "error":False,
         "name":name_data,
