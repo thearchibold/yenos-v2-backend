@@ -42,7 +42,7 @@ def getGender():
        return jsonify(gender)
     pass
 
-@app.route("api/v2/gender", methods=["GET"])
+@app.route("/api/v2/gender", methods=["GET"])
 def predict_gender():
     name_data = request.args.get("name")
     if len(name_data) <= 0:
