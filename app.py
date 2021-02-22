@@ -21,7 +21,9 @@ def special_match(strg, search=re.compile(r"[^a-zA-Z\'\"]").search):
 
 @app.route('/')
 def hello_world():
-    return render_template('landing.html')
+    return jsonify({
+        "endpoint":"https://yenos.herokuapp.com/api/v2/gender?name=Name"
+    })
 
 @app.route('/api_v1/gender/get_gender', methods=['GET'])
 def getGender():
