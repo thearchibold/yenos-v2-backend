@@ -1,6 +1,6 @@
 import re
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 from GenderDetector import detectGender
 from flask import jsonify
 from flask_cors import CORS
@@ -21,9 +21,7 @@ def special_match(strg, search=re.compile(r"[^a-zA-Z\'\"]").search):
 
 @app.route('/')
 def hello_world():
-    return jsonify({
-        "endpoint":"https://yenos.herokuapp.com/api/v2/gender?name=Name"
-    })
+    return redirect("https://yenos.vercel.app", code=302)
 
 @app.route('/api_v1/gender/get_gender', methods=['GET'])
 def getGender():
