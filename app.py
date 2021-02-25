@@ -23,6 +23,13 @@ def special_match(strg, search=re.compile(r"[^a-zA-Z\'\"]").search):
 def hello_world():
     return redirect("https://yenos.vercel.app", code=302)
 
+@app.route('/health')
+def get_app_health():
+    return jsonify({
+        "error":False,
+        "status":"OK"
+    })
+
 @app.route('/api_v1/gender/get_gender', methods=['GET'])
 def getGender():
     name_data = request.args.get("name")
