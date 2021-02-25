@@ -8,15 +8,19 @@ import pickle
 
 
 class Model:
-    def __init__(self):
+    def __init__(self, load_model = True):
 
         self.VOCAB_SIZE = 54
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        self.pretrained_model = self.get_model()
-        self.pretrained_model.load_weights("static/weight_v2")
+        
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
+        print("Done Loading and Initialising params")
+
+        if load_model:
+            self.pretrained_model = self.get_model()
+            self.pretrained_model.load_weights("static/weight_v2")
         pass
 
 
