@@ -1,17 +1,22 @@
 from Yenos_v2 import Model
 from tensorflow import keras
+import pickle
 
-model = Model.Model(load_model=False)
-encoder = model.load_existing_models()
 
 class Preprocessor:
-    def __init__(self):
-        
-        self._ , self.encoder = encoder
+    def __init__(self):    
+        with open('static/char_to_number.enc', 'rb+') as encoder:
+                self.encoder  = pickle.load(encoder)
+                pass          
+
+         
         self.VOCAB_SIZE = 53
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
         pass
+
+    def get_char_encoder(self):
+        return self.encoder
 
 
     def process_name(self, name = ""):

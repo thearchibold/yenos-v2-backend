@@ -2,42 +2,22 @@
 import numpy as np
 from tensorflow import keras
 import tensorflow as tf
-import pickle
 
 # tf.config.run_functions_eagerly(True)
 
 
 class Model:
-    def __init__(self, load_model = True):
-
+    def __init__(self):
         self.VOCAB_SIZE = 54
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        
+        self.pretrained_model = self.get_model()
+        self.pretrained_model.load_weights("static/weight_v2")
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         print("Done Loading and Initialising params")
-
-        if load_model:
-            self.pretrained_model = self.get_model()
-            self.pretrained_model.load_weights("static/weight_v2")
         pass
 
-
-    def load_existing_models(self):
-        try:
-            with open('static/char_to_number.enc', 'rb+') as encoder:
-                char_encoder = pickle.load(encoder)
-                pass
-
-
-            return self.pretrained_model, char_encoder            
-            
-
-        except Exception as e:
-            print(e)
-            return None, None
-        pass
 
 
     def predict(self, name_tokens = None):
