@@ -10,7 +10,7 @@ class Preprocessor:
                 pass          
 
          
-        self.VOCAB_SIZE = 53
+        self.VOCAB_SIZE = 55
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
         pass
