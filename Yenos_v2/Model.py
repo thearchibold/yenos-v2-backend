@@ -52,8 +52,8 @@ class Model:
 
         _input = keras.Input(shape=(20,))
         embedding = keras.layers.Embedding(self.VOCAB_SIZE, 100, input_length=self.MAX_LEN)(_input)
-        bidirectional_lstm = BI_LSTM_BLOCK(128,return_sequence=True)
-        bidirectional_lstm_2 = BI_LSTM_BLOCK(256, return_sequence=True)
+        bidirectional_lstm = self.BI_LSTM_BLOCK(128,return_sequence=True)
+        bidirectional_lstm_2 = self.BI_LSTM_BLOCK(256, return_sequence=True)
 
 
 
