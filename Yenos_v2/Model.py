@@ -57,8 +57,8 @@ class Model:
         blk_2 = bidirectional_lstm_2(embedding)
         # bl_2 = keras.layers.Flatten()(blk_2)
 
-        att_1 = Attention(blk,128)
-        att_2 = Attention(blk_2,256)
+        att_1 = self.Attention(blk,128)
+        att_2 = self.Attention(blk_2,256)
 
         concat = keras.layers.Concatenate()([att_1, att_2])
 
@@ -89,7 +89,7 @@ class Model:
 
         return lstm    
 
-    def Attention(activations, last_unit = 64):
+    def Attention(self, activations, last_unit = 64):
         attention = keras.layers.Dense(1, activation="tanh")(activations)
         attention = keras.layers.Flatten()(attention)
         attention = keras.layers.Activation("softmax")(attention)
