@@ -8,7 +8,7 @@ import tensorflow as tf
 
 class Model:
     def __init__(self):
-        self.VOCAB_SIZE = 54
+        self.VOCAB_SIZE = 55
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
         self.pretrained_model = self.get_model()
@@ -55,9 +55,12 @@ class Model:
 
         blk = bidirectional_lstm(embedding)
         blk_2 = bidirectional_lstm_2(embedding)
-        bl_2 = keras.layers.Flatten()(blk_2)
+        # bl_2 = keras.layers.Flatten()(blk_2)
 
-        concat = keras.layers.Concatenate()([blk, bl_2])
+        att_1 = Attention(blk,128)
+        att_2 = Attention(blk_2,256)
+
+        concat = keras.layers.Concatenate()([att_1, att_2])
 
         dense = keras.layers.Dense(192, activation="relu")(concat)
         dense = keras.layers.Dense(64, activation="relu")(dense)
@@ -85,3 +88,15 @@ class Model:
             pass
 
         return lstm    
+
+    def Attention(activations, last_unit = 64):
+        attention = keras.layers.Dense(1, activation="tanh")(activations)
+        attention = keras.layers.Flatten()(attention)
+        attention = keras.layers.Activation("softmax")(attention)
+        attention = keras.layers.RepeatVector(last_unit * 2)(attention)
+        attention = keras.layers.Permute([2,1])(attention)
+        
+        sent_representation = keras.layers.Multiply()([activations, attention])
+        sent_representation = keras.layers.Lambda(lambda xin: K.sum(xin, axis= -2), output_shape=last_unit*2)(sent_representation)
+        
+        return sent_representation
