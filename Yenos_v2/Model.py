@@ -48,23 +48,29 @@ class Model:
 
 
     def get_model(self):
-        _input = keras.Input(shape=(self.MAX_LEN,))
-        embedding = keras.layers.Embedding(self.VOCAB_SIZE, self.EMBEDDING_SIZE, input_length=self.MAX_LEN)(_input)
-        bidirectional_lstm = self.BI_LSTM_BLOCK(64)
-        bidirectional_lstm_2 = self.BI_LSTM_BLOCK(128, return_sequence=True)
+        # building the model
+
+        _input = keras.Input(shape=(20,))
+        embedding = keras.layers.Embedding(self.VOCAB_SIZE, 100, input_length=self.MAX_LEN)(_input)
+        bidirectional_lstm = BI_LSTM_BLOCK(128,return_sequence=True)
+        bidirectional_lstm_2 = BI_LSTM_BLOCK(256, return_sequence=True)
+
 
 
 
         blk = bidirectional_lstm(embedding)
         blk_2 = bidirectional_lstm_2(embedding)
-        # bl_2 = keras.layers.Flatten()(blk_2)
 
         att_1 = self.Attention(blk,128)
         att_2 = self.Attention(blk_2,256)
+        # bl_2 = keras.layers.Flatten()(blk_2)
 
         concat = keras.layers.Concatenate()([att_1, att_2])
 
-        dense = keras.layers.Dense(192, activation="relu")(concat)
+
+        dense = keras.layers.Dense(256, activation="relu")(concat)
+
+        dense = keras.layers.Dense(128, activation="relu")(dense)
         dense = keras.layers.Dense(64, activation="relu")(dense)
         output = keras.layers.Dense(2, activation="sigmoid")(dense)
 
