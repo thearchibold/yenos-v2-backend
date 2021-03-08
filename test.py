@@ -5,11 +5,11 @@ model = Model.Model()
 preprocessor = Preprocessor.Preprocessor()
 
 
-name_data = "Mabel"
+name_data = "Antoinette"
 
 process_data = preprocessor.process_name(name=name_data)
 
-# predictions = model.predict(process_data)
+predictions = model.predict(process_data)
 
-print(process_data)
+print(predictions)
 

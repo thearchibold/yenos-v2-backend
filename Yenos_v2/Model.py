@@ -10,12 +10,12 @@ import tensorflow.keras.backend as K
 
 class Model:
     def __init__(self):
-        self.VOCAB_SIZE = 55
+        self.VOCAB_SIZE = 54
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        # self.pretrained_model = self.get_model()
-        # self.pretrained_model.load_weights("static/weight_v2")
-        self.pretrained_model = keras.models.load_model('static/gender_model.h5')
+        self.pretrained_model = self.get_model()
+        self.pretrained_model.load_weights("static/weight_v2")
+        # self.pretrained_model = keras.models.load_model('static/gender_model.h5')
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         print("Done Loading and Initialising params")
