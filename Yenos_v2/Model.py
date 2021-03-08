@@ -13,8 +13,9 @@ class Model:
         self.VOCAB_SIZE = 55
         self.MAX_LEN = 20
         self.EMBEDDING_SIZE = 100
-        self.pretrained_model = self.get_model()
-        self.pretrained_model.load_weights("static/weight_v2")
+        # self.pretrained_model = self.get_model()
+        # self.pretrained_model.load_weights("static/weight_v2")
+        self.pretrained_model = keras.models.load_model('static/gender_model.h5')
         self.MALE = [0.0,1.0]
         self.FEMALE = [1.0, 0.0]
         print("Done Loading and Initialising params")
@@ -52,9 +53,8 @@ class Model:
 
         _input = keras.Input(shape=(20,))
         embedding = keras.layers.Embedding(self.VOCAB_SIZE, 100, input_length=self.MAX_LEN)(_input)
-        bidirectional_lstm = self.BI_LSTM_BLOCK(128,return_sequence=True)
+        bidirectional_lstm = self.BI_LSTM_BLOCK(128)
         bidirectional_lstm_2 = self.BI_LSTM_BLOCK(256, return_sequence=True)
-
 
 
 
@@ -67,20 +67,18 @@ class Model:
 
         concat = keras.layers.Concatenate()([att_1, att_2])
 
-
-        dense = keras.layers.Dense(256, activation="relu")(concat)
-
-        dense = keras.layers.Dense(128, activation="relu")(dense)
+        dense = keras.layers.Dense(192, activation="relu")(concat)
         dense = keras.layers.Dense(64, activation="relu")(dense)
         output = keras.layers.Dense(2, activation="sigmoid")(dense)
 
-        model = keras.Model(_input, output)
+
+        model = keras.Model(inputs=_input, outputs=output)
 
 
         opt = keras.optimizers.Adam(lr=1e-3)
-        loss = keras.losses.BinaryCrossentropy()
-        model.compile(metrics=["accuracy"], loss=loss,optimizer=opt)
-
+        loss = keras.losses.CategoricalCrossentropy()
+        metrics = keras.metrics.CategoricalAccuracy("acc")
+        model.compile(metrics=metrics, loss=loss,optimizer=opt)
 
         return model
 
